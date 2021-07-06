@@ -1,0 +1,127 @@
+/* Base styling*/
+body {
+  background-color: rgb(229, 226, 226);
+  margin: 0 auto;
+  padding: 0;
+  font-family: Arial;
+}
+
+section{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em 0;
+  font-size: 22px;
+}
+
+
+/* Popover styling */
+.popover__title {
+  font-size: 30px;
+  color: rgb(255, 153, 0);
+  line-height: 36px;
+  text-align: center;
+  padding: 15px 0;
+  position: static;
+  left: 250px;
+  cursor: pointer;
+}
+
+.popover__wrapper {
+  position: relative;
+  margin-top: 0;
+  padding: 0;
+  display: inline-block;
+}
+.popover__content {
+  opacity: 0;
+  visibility: hidden;
+  display: inline-block;
+  position: absolute;
+  left: 10px;
+  background-color:rgb(23, 112, 112);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  width: 500px;
+  border-radius: 20px;
+
+}
+.popover__content:before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  left: calc(5% - 0px);
+  top: -15px;
+  border-style: solid ;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent rgb(255, 153, 0) transparent;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.popover__wrapper:hover .popover__content {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  display: inline-block;
+  transform: translate(0, -25px);
+  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  border: 5px solid rgb(255, 153, 0);
+  font-size: medium;
+}
+.popover__message {
+  text-align: center;
+  color: rgb(255, 153, 0);
+
+}
+
+nav{
+  background-attachment: fixed;
+  background-color: rgb(23, 112, 112);
+}
+
+legend{
+  font: 'Times New Roman';
+  border:black 5px;
+  border-style: ridge;
+  color: black;
+  font-size: 30px;
+}
+fieldset{
+  display: inline-block;
+  height: fit-content;
+  border: 10px solid black;
+}
+form{
+  margin: 20px;
+  display: inline-block;
+  font-size: 30px;
+}
+label{
+  font-size: 30px;
+  margin: 10px;
+}
+
+select{
+  width: fit-content;
+  border: solid black 2px;
+  margin: 10px;
+  color: black;
+  outline: bisque;
+  font-size: 30px;
+  margin-left:0px;
+}
+
+input{
+  margin: 10px;
+  font-size: 30px;
+}
+button{
+  margin: 10 px;
+  position: relative;
+  left: 10px;
+  top: 10px;
+  font-size: 30px;
+  background-color: lavender;
+}
+
+
+
+

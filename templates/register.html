@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title> {{ title }} </title>
+    {% else %}
+    <title>Translator</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'style1.css')}}">
+</head>
+
+
+<body>
+<nav class = "centered" >
+  <div class="popover__wrapper">
+        <h2 class="popover__title">Help ?</h2>
+      <div class="popover__content">
+        <p class="popover__message">Enter Your Text In the Text Box , Just Select the language to transate to and from and hit the translate button</p>
+      </div>
+  </div>
+</nav>
+
+<section>
+<fieldset>
+    <legend> Translator </legend>
+    <form method="POST" action="{{ url_for('home') }}">
+
+        <label for="text">Enter Your Text :</label>
+        <input type = 'Text' name="text" placeholder="Enter Text"><br>
+
+        <label for= 'src'>From :</label>
+         <select name = 'src' >
+            {% for o in options %}
+            <option value = "{{o}}"> {{o}} </option>
+            {% endfor %}
+        </select>
+
+        <label for= 'dest'>To :</label>
+        <select name = 'dest' >
+            {% for o in options %}
+            <option value = "{{o}}"> {{o}} </option>
+            {% endfor %}
+        </select><br>
+
+        <button type="submit">Translate</button>
+
+    </form>
+</fieldset>
+</section>
+
+<section>
+    {% block content %}
+    {% endblock content %}
+</section>
+
+</body>
+
+</html>
